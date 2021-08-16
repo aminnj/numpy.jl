@@ -11,7 +11,7 @@ function Base.getproperty(a::NDArray, s::Symbol)
     if s == :x x
     elseif s == :sum return ()->sum(x)
     elseif s == :min return ()->minimum(x)
-    elseif s == :max return ()->max(x)
+    elseif s == :max return ()->maximum(x)
     elseif s == :mean return ()->sum(x)/length(x)
     else error("not implemented")
     end

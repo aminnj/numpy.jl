@@ -7,7 +7,7 @@ when you paste code into the wrong REPL...
 
 ## Installation
 
-```julia
+```
 ]add https://github.com/aminnj/numpy.jl
 ```
 
