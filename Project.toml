@@ -1,0 +1,4 @@
+name = "numpy"
+uuid = "ac2f350d-b457-4f9a-b0ad-5dbc8aee02ee"
+authors = ["Nick Amin <amin.nj@gmail.com>"]
+version = "0.1.0"
