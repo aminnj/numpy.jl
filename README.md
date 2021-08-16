@@ -22,3 +22,11 @@ array([1, 2, 3, 4])
 julia> a.mean()
 2.5
 ```
+
+Note that even without this package, you can do
+```julia
+julia> import Base as np
+
+julia> np.sum([1,2,3,4])
+10
+```
