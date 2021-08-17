@@ -35,4 +35,10 @@ julia> a.sum()
 2.051168
 ```
 
+Note that even without this package, you can do
+```julia
+julia> import Base as np
 
+julia> np.sum([1,2,3,4])
+10
+```
