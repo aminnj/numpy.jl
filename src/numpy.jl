@@ -1,10 +1,15 @@
 module numpy
 
 using Base, Statistics
+import Random: seed!
+
+# np.array
+# --------
 
 struct NDArray{T}
     x::T
 end
+array(a) = NDArray(collect(a))
 
 function wrapper(func, x; axis)
     if axis isa Int
@@ -45,6 +50,21 @@ function Base.show(io::IO, a::NDArray)
     end
 end
 
-array(a) = NDArray(collect(a))
+
+# np.random
+# ---------
+
+struct R end
+random = R()
+function Base.getproperty(r::R, s::Symbol) 
+    if s == :seed
+        seed->begin seed!(seed); nothing end
+    elseif s == :random
+        shape->array(rand(shape...))
+    elseif s == :normal
+        (mu,sig,shape)->array((randn(shape...).*sig.+mu))
+    else error("not implemented")
+    end
+end
 
 end

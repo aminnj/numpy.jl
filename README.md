@@ -2,8 +2,17 @@
 
 First: sorry.
 
-For those times when Python muscle memory kicks in, or
-when you paste code into the wrong REPL...
+## Pop quiz
+### Question
+```python
+import numpy as np
+np.random.seed(42)
+a = np.random.normal(0, 1, (4,4))
+a.mean(axis=0).sum()
+```
+Is this python code or julia code?
+### Answer
+Yes
 
 ## Installation
 
@@ -22,17 +31,19 @@ array([1, 2, 3, 4])
 julia> a.mean()
 2.5
 
-julia> a = np.array(rand(4,4))
-array([ 0.221871  0.560007  0.122403  0.610974
-        0.422056  0.690388  0.885317  0.917003
-        0.770121  0.082031  0.843426  0.642187
-        0.571325  0.675552  0.434466  0.0472529])
+julia> np.random.seed(42)
+
+julia> a = np.random.normal(0, 1, (4,4))
+array([ -0.556027    1.77786   -2.64199    0.518149
+        -0.444383   -1.1449     1.00331    1.49138
+         0.0271553  -0.468606   1.08238    0.367563
+        -0.299484    0.156143   0.187028  -0.886205])
 
 julia> a.mean(axis=0)
-array([ 0.475998  0.503286  0.557251  0.514633])
+array([ -0.318185  0.0801243  -0.092318  0.372721])
 
 julia> a.sum()
-2.051168
+0.16937152233464714
 ```
 
 Note that even without this package, you can do
